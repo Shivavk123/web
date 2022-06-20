@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container small">
+        <div class="flex col center">
+            <button disabled class="icon {{ cls }}">&#x{{ icon }};</button>
+            <h1 class="m-0 upper">Success!!</h1>
+            <p class="m-0">{{ desc }}</p>
+            <a href="{{ next }}">Perform another task</a>
+        </div>
+    </div>
+{% endblock %}

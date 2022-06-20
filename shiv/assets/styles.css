@@ -1,0 +1,171 @@
+:root {
+    --accent: seagreen;
+    --error: crimson;
+    --divider: silver;
+    --text: black;
+    --muted: grey;
+    --radius: 24px;
+    --radiusSmall: 12px;
+    --canvas: white;
+}
+
+html, body {
+    background: var(--divider);
+    color: var(--text);
+}
+
+* {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 640px;
+    margin: auto;
+    background: var(--canvas);
+    border-radius: var(--radiusSmall);
+}
+
+.container.small {
+    max-width: 400px;
+}
+
+.container > div:not(.tabs) {
+    padding: 20px;
+}
+
+label {
+    font-size: small;
+    text-transform: uppercase;
+    margin: 5px 0;
+    color: var(--muted);
+}
+
+input, select, textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    outline: none;
+    border: 1px solid var(--divider);
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    background: var(--accent);
+    border-top-left-radius: var(--radiusSmall);
+    border-top-right-radius: var(--radiusSmall);
+    padding: 10px;
+}
+
+.tabs.bg-error {
+    background: var(--error);
+}
+
+.tabs > a,
+.tabs > a:link {
+    flex: 1;
+    color: var(--divider);
+    padding: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: small;
+}
+
+
+.tabs > a.active {
+    color: var(--accent);
+    background: var(--canvas);
+    border-radius: var(--radius);
+}
+
+.tabs.bg-error > a.active {
+    color: var(--error);
+}
+
+button {
+    background: var(--accent);
+    border-radius: var(--radius);
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+
+button.danger {
+    background: var(--error);
+}
+
+.flex {
+    display: flex;
+}
+
+.end {
+    justify-content: flex-end;
+}
+
+.upper {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+hr {
+    background: var(--text);
+    height: 4px;
+    border: none;
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+.text-danger {
+    color: var(--error);
+}
+
+.errors {
+    background: var(--error);
+    padding: 10px;
+    margin: 20px 0;
+    color: white;
+    border-radius: var(--radius);
+}
+
+button:disabled {
+    background: var(--divider);
+}
+
+.col {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.icon:disabled {
+    width: 96px;
+    height: 96px;
+    font-size: xxx-large;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.icon.success:disabled {
+    background: var(--error);
+}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+    <div class="container" style="--canvas: {% if action == "Submit" %}#f3fff3{% else %}#fff3f3{% endif %};">
+        {% include "workflow.html" %}
+        <div>
+            <h3 class="upper">{{ title }}</h3>
+            <hr/>
+            <form method="post">
+                {% csrf_token %}
+                {% if error %}
+                    <div class="errors">{{ error }}</div>
+                {% endif %}
+                {% if form.non_field_errors %}
+                    <div class="errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                {% for field in form %}
+                    <div class="input-container">
+                        <label for="{{ field.id_for_label }}">{{ field.label }} {% if field.field.required %}
+                            <span class="text-danger"> * </span>{% endif %}</label>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+
+                <div class="flex end">
+                    <button class="{% if action == "Cancel" %}danger{% endif %}" {% if error %}disabled{% endif %}
+                            type="submit">{{ action }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

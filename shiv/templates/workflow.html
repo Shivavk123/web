@@ -1,0 +1,5 @@
+<div class="tabs {% if request.path == '/cancel/' %}bg-error{% endif %}">
+    <a class="{% if request.path == '/release/' %}active{% endif %}" href="{% url 'delivery_request' %}">Release
+        Order</a>
+    <a class="{% if request.path == '/cancel/' %}active{% endif %}" href="{% url 'delivery_cancel' %}">Cancel Order</a>
+</div>
